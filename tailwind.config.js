@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        OnlyUsedTeslaRed: "#E80013",
+        OnlyUsedTeslaRedHover: "#6c7884"
+      }
+    },
   },
   plugins: [],
 }
