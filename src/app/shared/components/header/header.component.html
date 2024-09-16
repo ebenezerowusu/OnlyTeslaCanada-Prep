@@ -11,9 +11,17 @@
             <a href="#" class="hover:text-red-500">About</a>
             <a href="#" class="hover:text-red-500">Blog</a>
             <a href="#" class="hover:text-red-500">Contact</a>
+            <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-red-500">Account</a>
             <a href="#" class="hover:text-red-500">+ Sell My Tesla</a>
-            <a href="#" class="hover:text-red-500">Log In</a>
-            <a href="#" class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded">REGISTER</a>
+            <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
+              <a class="hover:text-red-500 cursor-pointer" (click)="auth.logout()">
+                Logout
+              </a>
+            </ng-container>
+            <ng-template #loginButton>
+              <a (click)="auth.loginWithRedirect()" href="#" class="hover:text-red-500 cursor-pointer">Log In</a>
+              <a class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
+            </ng-template>
         </nav>
     </div>
 </header>
