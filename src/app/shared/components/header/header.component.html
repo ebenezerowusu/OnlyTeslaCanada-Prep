@@ -20,7 +20,7 @@
             </ng-container>
             <ng-template #loginButton>
               <a (click)="auth.loginWithRedirect()" href="#" class="hover:text-red-500 cursor-pointer">Log In</a>
-              <a class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
+              <a (click)="auth.loginWithRedirect()" class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
             </ng-template>
         </nav>
     </div>

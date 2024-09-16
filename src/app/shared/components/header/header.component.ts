@@ -13,6 +13,6 @@ import { Inject } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor(public auth: AuthService, @Inject(DOCUMENT) public document: Document) { }
+  constructor(public auth: AuthService) { }
 
 }
