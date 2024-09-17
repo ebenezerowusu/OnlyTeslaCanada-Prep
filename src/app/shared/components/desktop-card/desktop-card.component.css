@@ -1,0 +1,22 @@
+.car-listing::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.5rem;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff 50%);
+
+    z-index: 1;
+    /* Adjust this if needed */
+}
+
+.description {
+    justify-content: start;
+}
+
+@media (min-width: 1024px) {
+    .car-listing::after {
+        height: 1.7rem;
+    }
+}
