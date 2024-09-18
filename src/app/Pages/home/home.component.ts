@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ListingCardComponent } from '../../shared/components/listing-card/listing-card.component'; 
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
