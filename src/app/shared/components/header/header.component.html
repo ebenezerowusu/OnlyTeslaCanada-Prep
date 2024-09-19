@@ -1,29 +1,87 @@
 <!-- header.component.html -->
-<header class="bg-black text-white">
-    <div class="navbar mx-auto flex justify-between items-center py-4 px-6">
-        <!-- Logo -->
-        <img src="../../assets/out-horizontal-logo.svg" alt="Logo" class="w-[240px] h-[22.31px]">
+<header class="border-b bg-black px-5 py-1 text-white lg:px-0 lg:py-0 flex justify-center">
+  <div class="navbar xl:mx-auto flex items-center justify-between xl:container w-full">
+    <!-- Logo -->
+    <a routerLink="/">
+      <img
+        src="../../assets/out-horizontal-logo.svg"
+        alt="Logo"
+        class="h-[22.31px] w-[240px]"
+      />
+    </a>
 
-        <!-- Navigation Links -->
-        <nav class="flex items-center space-x-[30px] text-[#CCCCCC]">
-            <a href="#" class="hover:text-red-500">Used Tesla For Sale</a>
-            <a href="#" class="hover:text-red-500">FAQ</a>
-            <a href="#" class="hover:text-red-500">About</a>
-            <a href="#" class="hover:text-red-500">Blog</a>
-            <a href="#" class="hover:text-red-500">Contact</a>
-            <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-red-500">Account</a>
-            <a href="#" class="hover:text-red-500">+ Sell My Tesla</a>
-            <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
-              <a class="hover:text-red-500 cursor-pointer" (click)="auth.logout()">
-                Logout
-              </a>
-            </ng-container>
-            <ng-template #loginButton>
-              <a (click)="auth.loginWithRedirect()" href="#" class="hover:text-red-500 cursor-pointer">Log In</a>
-              <a (click)="auth.loginWithRedirect()" class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
-            </ng-template>
-        </nav>
+    <!-- Navigation Links -->
+    <nav
+      class="hidden items-center space-x-[15px] text-[#CCCCCC] lg:flex xl:space-x-[30px]"
+    >
+      <a
+        routerLink="/used-tesla-for-sale"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >Used Tesla For Sale</a
+      >
+
+      <a
+        routerLink="#"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >FAQ</a
+      >
+      <a
+        routerLink="#"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >About</a
+      >
+
+      <a
+        routerLink="#"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >Blog</a
+      >
+
+      <a
+        routerLink="#"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >Contact</a
+      >
+      <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-white"
+        >Account</a
+      >
+      <a
+        routerLink="#"
+        routerLinkActive="active"
+        class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
+        >+ Sell My Tesla</a
+      >
+      <ng-container
+        *ngIf="
+          auth.isAuthenticated$ | async as isAuthenticated;
+          else loginButton
+        "
+      >
+        <a class="cursor-pointer hover:text-red-500" (click)="auth.logout()">
+          Logout
+        </a>
+      </ng-container>
+      <ng-template #loginButton>
+        <a
+          (click)="auth.loginWithRedirect()"
+          href="#"
+          class="cursor-pointer hover:text-red-500"
+          >Log In</a
+        >
+        <a
+          (click)="auth.loginWithRedirect()"
+          class="cursor-pointer rounded bg-OnlyUsedTeslaRed px-4 py-1 text-white hover:bg-OnlyUsedTeslaRedHover"
+          >REGISTER</a
+        >
+      </ng-template>
+    </nav>
+    <div class="lg:hidden">
+      <app-mobile-sidebar></app-mobile-sidebar>
     </div>
+  </div>
 </header>
-
-
