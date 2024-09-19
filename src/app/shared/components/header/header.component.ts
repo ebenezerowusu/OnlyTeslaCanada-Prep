@@ -11,14 +11,5 @@ import { MobileSidebarComponent } from '../mobile-sidebar/mobile-sidebar.compone
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  NavLinks = [
-    { name: "Used Tesla For Sale", link: "/used-tesla-for-sale" },
-    { name: "FAQ", link: "/faq" },
-    { name: "About", link: "/about" },
-    { name: "Blog", link: "/blog" },
-    { name: "Contact", link: "/contact" },
-    { name: "Sell My Tesla", link: "/sell-my-tesla" },
-    { name: "Log In", link: "/login" },
-    { name: "Register", link: "/register" }
-  ]
+  
 }
