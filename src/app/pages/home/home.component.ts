@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import { Inject } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { ListingCardComponent } from '../../shared/components/listing-card/listing-card.component'; 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ListingCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

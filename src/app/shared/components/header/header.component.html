@@ -1,6 +1,6 @@
 <!-- header.component.html -->
-<header class="border-b bg-black px-5 py-1 text-white lg:px-0 lg:py-0">
-  <div class="navbar mx-auto flex items-center justify-between xl:container">
+<header class="border-b bg-black px-5 py-1 text-white lg:px-0 lg:py-0 flex justify-center">
+  <div class="navbar xl:mx-auto flex items-center justify-between xl:container w-full">
     <!-- Logo -->
     <a routerLink="/">
       <img
@@ -9,7 +9,6 @@
         class="h-[22.31px] w-[240px]"
       />
     </a>
-
 
     <!-- Navigation Links -->
     <nav
@@ -48,29 +47,38 @@
         class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
         >Contact</a
       >
-      <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-white">Account</a>
+      <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-white"
+        >Account</a
+      >
       <a
         routerLink="#"
         routerLinkActive="active"
         class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
         >+ Sell My Tesla</a
       >
-
-      <a href="#" class="hover:text-red-500">Log In</a>
-      <a
-        href="#"
-        class="rounded bg-OnlyUsedTeslaRed px-4 py-1 text-white hover:bg-OnlyUsedTeslaRedHover"
-        >REGISTER</a
+      <ng-container
+        *ngIf="
+          auth.isAuthenticated$ | async as isAuthenticated;
+          else loginButton
+        "
       >
-      <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
-              <a class="hover:text-red-500 cursor-pointer" (click)="auth.logout()">
-                Logout
-              </a>
-            </ng-container>
-            <ng-template #loginButton>
-              <a (click)="auth.loginWithRedirect()" href="#" class="hover:text-red-500 cursor-pointer">Log In</a>
-              <a (click)="auth.loginWithRedirect()" class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
-            </ng-template>
+        <a class="cursor-pointer hover:text-red-500" (click)="auth.logout()">
+          Logout
+        </a>
+      </ng-container>
+      <ng-template #loginButton>
+        <a
+          (click)="auth.loginWithRedirect()"
+          href="#"
+          class="cursor-pointer hover:text-red-500"
+          >Log In</a
+        >
+        <a
+          (click)="auth.loginWithRedirect()"
+          class="cursor-pointer rounded bg-OnlyUsedTeslaRed px-4 py-1 text-white hover:bg-OnlyUsedTeslaRedHover"
+          >REGISTER</a
+        >
+      </ng-template>
     </nav>
     <div class="lg:hidden">
       <app-mobile-sidebar></app-mobile-sidebar>
