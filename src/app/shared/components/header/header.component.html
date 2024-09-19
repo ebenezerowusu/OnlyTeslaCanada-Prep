@@ -10,6 +10,7 @@
       />
     </a>
 
+
     <!-- Navigation Links -->
     <nav
       class="hidden items-center space-x-[15px] text-[#CCCCCC] lg:flex xl:space-x-[30px]"
@@ -47,6 +48,7 @@
         class="border-3 relative border-OnlyUsedTeslaRed hover:text-white"
         >Contact</a
       >
+      <a *ngIf="auth.isAuthenticated$ | async" href="#" class="hover:text-white">Account</a>
       <a
         routerLink="#"
         routerLinkActive="active"
@@ -60,6 +62,15 @@
         class="rounded bg-OnlyUsedTeslaRed px-4 py-1 text-white hover:bg-OnlyUsedTeslaRedHover"
         >REGISTER</a
       >
+      <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
+              <a class="hover:text-red-500 cursor-pointer" (click)="auth.logout()">
+                Logout
+              </a>
+            </ng-container>
+            <ng-template #loginButton>
+              <a (click)="auth.loginWithRedirect()" href="#" class="hover:text-red-500 cursor-pointer">Log In</a>
+              <a (click)="auth.loginWithRedirect()" class="bg-OnlyUsedTeslaRed hover:bg-OnlyUsedTeslaRedHover text-white py-1 px-4 rounded cursor-pointer">REGISTER</a>
+            </ng-template>
     </nav>
     <div class="lg:hidden">
       <app-mobile-sidebar></app-mobile-sidebar>

@@ -1,0 +1,11 @@
+<main class="main">
+  <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
+    <button (click)="auth.logout()">
+      Log out
+    </button>
+  </ng-container>
+  <ng-template #loginButton>
+    <button (click)="auth.loginWithRedirect()">Log in</button>
+  </ng-template>
+  <h1>Home Page</h1>
+</main>
