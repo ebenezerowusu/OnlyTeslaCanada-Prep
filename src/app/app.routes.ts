@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './Pages/home/home.component';
-import { UsedTeslaForSaleComponent } from './Pages/used-tesla-for-sale/used-tesla-for-sale.component';
-import { DashbaordComponent } from './pages/dashbaord/dashbaord.component';
+import { HomeComponent } from './static/pages/home/home.component';
+import { DashbaordComponent } from './features/dashbaord/dashbaord.component';
+import { UsedTeslaForSaleComponent } from './features/listings/pages/used-tesla-for-sale/used-tesla-for-sale.component';
 
 export const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import { Inject } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ListingCardComponent } from '../../shared/components/listing-card/listing-card.component'; 
+import { ListingCardComponent } from '../../../features/listings/components/listing-card/listing-card.component'; 
 
 @Component({
   selector: 'app-home',

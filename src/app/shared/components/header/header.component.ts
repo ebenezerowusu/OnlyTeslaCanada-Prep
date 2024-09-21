@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLinkActive, RouterLink } from '@angular/router';
-import { MobileSidebarComponent } from '../mobile-sidebar/mobile-sidebar.component';
+import { MobileSidebarComponent } from '../../../features/listings/components/mobile-sidebar/mobile-sidebar.component';
 import { DOCUMENT } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 import { Inject } from '@angular/core';
