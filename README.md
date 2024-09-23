@@ -27,8 +27,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # OnlyTeslaCanada-Prep
 
+<!--
 
 ##OUT-AVATAR
+
 <lib-out-avatar 
 src="https://via.placeholder.com/150" 
 alt="User Avatar" 
@@ -52,16 +54,16 @@ customClass="bg-green-500">
 ##badges
 <atom-badge label="Default Badge"></atom-badge>
 
-<!-- Primary Badge -->
+
 <atom-badge label="Primary Badge" color="primary"></atom-badge>
 
-<!-- Success Badge -->
+
 <atom-badge label="Success Badge" color="success" size="large"></atom-badge>
 
-<!-- Warning Badge -->
+
 <atom-badge label="Warning Badge" color="warning" size="small"></atom-badge>
 
-<!-- Danger Badge -->
+
 <atom-badge label="Danger Badge" color="danger" size="medium"></atom-badge>
 
 ##button
@@ -76,29 +78,29 @@ customClass="bg-green-500">
 
 ##Icon
 
-<!-- Font Icon -->
+
 <atom-icon iconName="fas fa-home" size="medium" color="blue-500"></atom-icon>
 
-<!-- SVG Icon -->
+
 <atom-icon iconName="home" iconType="svg" size="large" color="red-500"></atom-icon>
 
 
 ##image
-<!-- Small Rounded Image -->
+
 <atom-image 
   src="https://via.placeholder.com/150" 
   alt="Placeholder Image" 
   class="w-24 h-24 rounded-full">
 </atom-image>
 
-<!-- Medium Image -->
+
 <atom-image 
   src="https://via.placeholder.com/200" 
   alt="Placeholder Image" 
   class="w-48 h-48">
 </atom-image>
 
-<!-- Large Image -->
+
 <atom-image 
   src="https://via.placeholder.com/300" 
   alt="Placeholder Image" 
@@ -107,14 +109,13 @@ customClass="bg-green-500">
 
 ##Text
 
-<!-- Example of using Text component as an H1 heading -->
 <atom-text 
   tag="h1" 
   content="Welcome to the Site" 
   customClasses="text-3xl font-bold text-gray-900">
 </atom-text>
 
-<!-- Example of using Text component as a paragraph -->
+
 <atom-text 
   tag="p" 
   content="This is a sample paragraph with customizable styles." 
@@ -123,28 +124,27 @@ customClass="bg-green-500">
 
 
 ##input
-<!-- Text Input -->
+
 <atom-input 
   type="text" 
   placeholder="Enter your name" 
   class="border p-2 rounded-lg">
 </atom-input>
 
-<!-- Email Input -->
+
 <atom-input 
   type="email" 
   placeholder="Enter your email" 
   class="border p-2 rounded-lg">
 </atom-input>
 
-<!-- Password Input -->
 <atom-input 
   type="password" 
   placeholder="Enter your password" 
   class="border p-2 rounded-lg">
 </atom-input>
 
-<!-- Number Input -->
+
 <atom-input 
   type="number" 
   placeholder="Enter a number" 
@@ -191,3 +191,5 @@ customClass="bg-green-500">
   [checked]="false" 
   customClasses="text-gray-900">
 </atom-switch>
+
+->
