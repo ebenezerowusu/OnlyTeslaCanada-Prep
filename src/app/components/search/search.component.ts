@@ -34,12 +34,13 @@ export class SearchComponent implements OnInit {
 
   goToSearchUrl(): void {
     const { model, year, location } = this.searchForm.value;
-    const params = new URLSearchParams();
+    const queryParams: any = {};
 
-    if (model !== 'ALL_OPTIONS') params.set('model', model);
-    if (year !== 'ALL_OPTIONS') params.set('year', year);
-    if (location !== 'ALL_OPTIONS') params.set('location', location);
+    if (model !== 'ALL_OPTIONS') queryParams.model = model;
+    if (year !== 'ALL_OPTIONS') queryParams.year = year;
+    if (location !== 'ALL_OPTIONS') queryParams.location = location;
 
-    this.router.navigate(['/listings'], { queryParams: params });
+    this.router.navigate(['/listings'], { queryParams });
   }
+
 }
