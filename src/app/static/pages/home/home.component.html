@@ -1,4 +1,4 @@
-<main class="main">
+<!-- <main class="main">
   <ng-container *ngIf="auth.isAuthenticated$ | async as isAuthenticated; else loginButton">
     <button (click)="auth.logout()">
       Log out
@@ -8,10 +8,36 @@
     <button (click)="auth.loginWithRedirect()">Log in</button>
   </ng-template>
   <h1>Home Page</h1>
+</main> -->
+
+<section [ngStyle]="{ 'background-image': 'url(assets/images/hero_cover3.jpg)' }"
+  class="relative bg-cover bg-center h-[50vh] md:h-[60vh] lg:h-[70vh]">
+
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+
+  <div class="absolute bottom-5 left-0 w-full md:bottom-[15%]">
+    <div class="container mx-auto px-4  xl:px-[6rem]">
+
+      <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-[35px]">
+        Used TESLA For Sale
+      </h1>
+
+      <!-- Search Component -->
+      <app-search></app-search>
+
+      <!-- Call-to-action buttons -->
+      <div class="mt-4 space-x-4">
+        <button class="text-white underline hover:text-[#e80013] cursor-pointer">Sell Your Tesla</button>
+        <a routerLink="/sell-your-tesla" class="text-white underline hover:text-[#e80013] cursor-pointer">Sell Your Tesla</a>
+        <a routerLink="/listings" class="text-white underline hover:text-[#e80013] cursor-pointer">View Listings</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-3 px-[1rem] xl:px-[8%] container mx-auto">
   <app-listing-card></app-listing-card>
   <app-listing-card></app-listing-card>
   <app-listing-card></app-listing-card>
 </section>
-
-</main>
