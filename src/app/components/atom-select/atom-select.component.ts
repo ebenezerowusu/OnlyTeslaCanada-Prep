@@ -12,15 +12,15 @@ interface SelectOption {
   templateUrl: './atom-select.component.html',
   styleUrl: './atom-select.component.css'
 })
+  //..
 export class AtomSelectComponent {
-  @Input() options: SelectOption[] = []; // Array of select options (label-value pairs)
-  @Input() selectedValue: any = null;    // Currently selected value
+  @Input() options: SelectOption[] = []; 
+  @Input() selectedValue: any = null;   
 
-  @Output() selectChange = new EventEmitter<any>(); // Emit the selected value when changed
-
-  // Triggered when user changes selection
+  @Output() selectChange = new EventEmitter<any>(); 
+  
   onChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
-    this.selectChange.emit(value); // Emit selected value
+    this.selectChange.emit(value); 
   }
 }
