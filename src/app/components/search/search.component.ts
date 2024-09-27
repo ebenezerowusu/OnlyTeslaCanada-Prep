@@ -1,38 +1,67 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AtomSelectComponent } from '../atom-select/atom-select.component';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    AtomSelectComponent // Ensure it's imported here
+  ],
   templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   options = {
-    model: ['Model S', 'Model X', 'Model 3', 'Model Y'],
-    year: ['2020', '2021', '2022', '2023'],
-    location: ['New York', 'California', 'Texas', 'Florida'],
+    model: [
+      { label: 'All', value: 'ALL_OPTIONS' }, // Default option
+      { label: 'Model S', value: 'Model S' },
+      { label: 'Model X', value: 'Model X' },
+      { label: 'Model 3', value: 'Model 3' },
+      { label: 'Model Y', value: 'Model Y' }
+    ],
+    year: [
+      { label: 'All', value: 'ALL_OPTIONS' }, // Default option
+      { label: '2020', value: '2020' },
+      { label: '2021', value: '2021' },
+      { label: '2022', value: '2022' },
+      { label: '2023', value: '2023' }
+    ],
+    location: [
+      { label: 'All', value: 'ALL_OPTIONS' }, // Default option
+      { label: 'New York', value: 'New York' },
+      { label: 'California', value: 'California' },
+      { label: 'Texas', value: 'Texas' },
+      { label: 'Florida', value: 'Florida' }
+    ]
   };
 
+
   constructor(private fb: FormBuilder, private router: Router) {
+
     this.searchForm = this.fb.group({
       model: ['ALL_OPTIONS'],
       year: ['ALL_OPTIONS'],
       location: ['ALL_OPTIONS'],
     });
+
   }
 
   ngOnInit(): void {
-    // Any initialization logic if needed
+
+  }
+
+  onSelectChange(value: any): void {
+    console.log('Selected value:', value);
   }
 
   goToSearchUrl(): void {
+    console.log('helolo')
     const { model, year, location } = this.searchForm.value;
     const queryParams: any = {};
 
@@ -42,5 +71,4 @@ export class SearchComponent implements OnInit {
 
     this.router.navigate(['/listings'], { queryParams });
   }
-
 }

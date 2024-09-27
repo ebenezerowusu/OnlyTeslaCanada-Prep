@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter,ChangeDetectionStrategy } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 interface SelectOption {
   label: string;
@@ -6,21 +8,23 @@ interface SelectOption {
 }
 
 @Component({
-  selector: 'app-atom-select',
+  selector: 'lib-atom-select',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './atom-select.component.html',
-  styleUrl: './atom-select.component.css'
+  styleUrls: ['./atom-select.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-  //..
 export class AtomSelectComponent {
-  @Input() options: SelectOption[] = []; 
-  @Input() selectedValue: any = null;   
+  @Input() options: { label: string, value: any }[] = [];
+  @Input() formControlName: string = '';
+  @Input() id: string = '';
+  @Input() className: string = '';
 
-  @Output() selectChange = new EventEmitter<any>(); 
-  
+  @Output() selectChange = new EventEmitter<any>();
+
   onChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
-    this.selectChange.emit(value); 
+    this.selectChange.emit(value);
   }
 }
