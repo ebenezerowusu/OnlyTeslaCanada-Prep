@@ -1,0 +1,36 @@
+<select
+  [formControlName]="formControlName"
+  [id]="id"
+  [ngClass]="className"
+  (change)="onChange($event)">
+  <option *ngFor="let option of options" [value]="option.value">
+    {{ option.label }}
+  </option>
+</select>
+
+  <!--
+  <lib-out-select
+  [options]="selectOptions"
+  [selectedValue]="selected"
+  (selectChange)="onSelectChange($event)"
+  [formControlName]="name"
+  [className]="'my-class'"
+  [id]="'my-id'"
+></lib-out-select>
+
+
+
+
+selectOptions = [
+    { label: 'New York', value: 'NY' },
+    { label: 'California', value: 'CA' },
+    { label: 'Texas', value: 'TX' }
+  ];
+
+  selected = 'All';
+
+  onSelectChange(value: any) {
+    console.log('Selected value:', value);
+    this.selected = value;
+  }
+  -->
