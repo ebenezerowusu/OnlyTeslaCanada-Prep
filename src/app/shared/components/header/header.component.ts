@@ -6,7 +6,6 @@ import { DOCUMENT } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 import { Inject } from '@angular/core';
 
-
 @Component({
   selector: 'app-header',
   standalone: true,
