@@ -1,0 +1,40 @@
+<!-- car-carousel.component.html -->
+<div class="flex flex-col items-center">
+  <!-- Main Image -->
+  <div class="mb-4 w-full max-w-3xl relative">
+    <img
+      [src]="images[selectedImage]"
+      alt="Tesla Image"
+      class="h-auto w-full rounded-lg object-cover"
+    />
+    <p class="text-base rounded-lg px-2 py-2 absolute bottom-1 left-1 text-white bg-black">{{selectedImage + 1 }} / {{images.length}}</p>
+  </div>
+
+  <div class="relative max-w-3xl w-full snap-x">
+    <button
+      class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-lg bg-black px-3 py-2 text-white hover:bg-gray-700"
+      (click)="prevImage()"
+    >
+
+      &larr;
+    </button>
+    <!-- Thumbnails -->
+    <div class="thumbnails w-full flex justify-start space-x-4 snap-center overflow-x-auto" #thumbnailContainer>
+      <img
+        *ngFor="let image of images; let i = index"
+        [src]="image"
+        (click)="selectImage(i)"
+        [ngClass]="{'border-OnlyUsedTeslaRed border-b-4': i === selectedImage}"
+        class="h-auto w-48 cursor-pointer rounded object-cover transition-all duration-300"
+        alt="Tesla Thumbnail"
+      />
+    </div>
+    <!-- Next Button -->
+    <button
+      class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-lg bg-black px-3 py-2 text-white hover:bg-gray-700"
+      (click)="nextImage()"
+    >
+      &rarr;
+    </button>
+  </div>
+</div>
