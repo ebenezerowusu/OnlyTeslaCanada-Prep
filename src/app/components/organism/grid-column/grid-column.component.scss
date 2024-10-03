@@ -1,0 +1,47 @@
+/* grid-column.component.scss */
+@import 'design-system';
+
+.vueGridColumn {
+  padding: 0;
+  flex-basis: var(--phone);
+
+  @media (min-width: 600px) {
+    flex-basis: var(--tablet-portrait);
+  }
+
+  @media (min-width: 900px) {
+    flex-basis: var(--tablet-landscape);
+  }
+
+  @media (min-width: 1200px) {
+    flex-basis: var(--small-desktop);
+  }
+
+  @media (min-width: 1800px) {
+    flex-basis: var(--large-desktop);
+  }
+
+  &.hsm {
+    padding-left: $gutter-sm;
+  }
+
+  &.hmd {
+    padding-left: $gutter-md;
+  }
+
+  &.hlg {
+    padding-left: $gutter-lg;
+  }
+
+  &.vsm {
+    padding-top: $gutter-sm;
+  }
+
+  &.vmd {
+    padding-top: $gutter-md;
+  }
+
+  &.vlg {
+    padding-top: $gutter-lg;
+  }
+}

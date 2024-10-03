@@ -1,0 +1,40 @@
+@import 'design-system';
+
+.hide-if-mobile {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.search {
+  float: left;
+  margin-top: 35px;
+
+  &-grid {
+    width: 400px;
+
+    @media (min-width: 768px) {
+      width: 680px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 980px;
+    }
+  }
+
+  &-button {
+    margin-top: 4px;
+    height: 56px;
+    width: 100%;
+    background: palette-color('red');
+    border-radius: 0;
+    color: palette-color('white');
+
+    &:hover {
+      color: palette-color('white');
+      background: palette-color('cool-grey');
+    }
+  }
+}

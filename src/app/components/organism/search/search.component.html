@@ -1,0 +1,52 @@
+<div class="search">
+  <app-grid [verticalSpace]="'lg'" [horizontalSpace]="'md'" [textAlign]="'center'" [fluid]="true">
+    <app-grid-row *ngIf="filterOptions$ | async as filterOptions" align-items="top" class="search-filters">
+      <app-grid-column horizontal-space="none" vertical-space="none" width="50%" tablet-portrait="100%">
+        <app-select
+          id="model"
+          name="model"
+          inline-placeholder="MODEL"
+          [disabled]="(isLoading | async) ?? false"
+          [items]="(options.model | async) ?? []"
+          [(ngModel)]="selected.model"
+          (ngModelChange)="onChange({ name: 'model', change: $event })"
+        ></app-select>
+      </app-grid-column>
+      <app-grid-column class="hide-if-mobile" horizontal-space="none" vertical-space="none" width="50%" tablet-portrait="100%">
+        <app-select
+          id="year"
+          name="year"
+          inline-placeholder="YEAR"
+          [disabled]="(isLoading | async) ?? false"
+          [items]="(options.year | async) ?? []"
+          [(ngModel)]="selected.year"
+          (ngModelChange)="onChange({ name: 'year', change: $event })"
+        ></app-select>
+      </app-grid-column>
+      <app-grid-column class="hide-if-mobile" horizontal-space="none" vertical-space="none" width="50%" tablet-portrait="100%">
+        <app-select
+          id="location"
+          name="location"
+          inline-placeholder="LOCATION"
+          [disabled]="(isLoading | async) ?? false"
+          [items]="(options.location | async) ?? []"
+          [(ngModel)]="selected.location"
+          (ngModelChange)="onChange({ name: 'location', change: $event })"
+        ></app-select>
+      </app-grid-column>
+      <app-grid-column horizontal-space="none" vertical-space="none" width="50%" tablet-portrait="100%">
+        <app-button
+          [disabled]="false"
+          [loading]="false"
+          [elementType]="'button'"
+          [ghost]="false"
+          [color]="'primary'"
+          [block]="true"
+          (click)="goToSearchUrl()"
+        >
+          Click Me
+        </app-button>
+      </app-grid-column>
+    </app-grid-row>
+  </app-grid>
+</div>

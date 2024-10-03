@@ -1,0 +1,189 @@
+@import 'designSystem/variables';
+@import 'designSystem/mixins';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 1.6em;
+  font-weight: $font-weight-light;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height-md;
+  font-display: swap;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+a {
+  color: var(--brand-link-color);
+  font-weight: $link-font-weight;
+
+  &:hover {
+    color: var(--brand-link-hover-color);
+  }
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../assets/webfonts/UntitledSansRegular.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../assets/webfonts/UntitledSansRegularItalic.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansRegularItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../assets/webfonts/UntitledSansMedium.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 500;
+  font-style: italic;
+  src: url('../assets/webfonts/UntitledSansMediumItalic.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansMediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../assets/webfonts/UntitledSansBold.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  font-weight: 700;
+  font-style: italic;
+  src: url('../assets/webfonts/UntitledSansBoldItalic.woff2') format('woff2'),
+    url('../assets/webfonts/UntitledSansBoldItalic.woff') format('woff');
+}
+
+/* Set custom properties for each layout feature */
+:root {
+  --untitledsans-regular-case: 'case' off;
+  --untitledsans-regular-dnom: 'dnom' off;
+  --untitledsans-regular-frac: 'frac' off;
+  --untitledsans-regular-numr: 'numr' off;
+  --untitledsans-regular-ordn: 'ordn' off;
+  --untitledsans-regular-sinf: 'sinf' off;
+  --untitledsans-regular-sups: 'sups' off;
+  --untitledsans-regular-tnum: 'tnum' off;
+  --untitledsans-regular-zero: 'zero' off;
+  --untitledsans-regular-cpsp: 'cpsp' off;
+}
+
+/* If class is applied, update custom property and
+   apply modern font-variant-* when supported */
+.us-regular-case {
+  --untitledsans-regular-case: 'case' on;
+}
+
+.us-regular-dnom {
+  --untitledsans-regular-dnom: 'dnom' on;
+}
+
+.us-regular-frac {
+  --untitledsans-regular-frac: 'frac' on;
+}
+
+@supports (font-variant-numeric: diagonal-fractions) {
+  .us-regular-frac {
+    --untitledsans-regular-frac: '____';
+    font-variant-numeric: diagonal-fractions;
+  }
+}
+
+.us-regular-numr {
+  --untitledsans-regular-numr: 'numr' on;
+}
+
+.us-regular-ordn {
+  --untitledsans-regular-ordn: 'ordn' on;
+}
+
+@supports (font-variant-numeric: ordinal) {
+  .us-regular-ordn {
+    --untitledsans-regular-ordn: '____';
+    font-variant-numeric: ordinal;
+  }
+}
+
+.us-regular-sinf {
+  --untitledsans-regular-sinf: 'sinf' on;
+}
+
+.us-regular-sups {
+  --untitledsans-regular-sups: 'sups' on;
+}
+
+@supports (font-variant-position: super) {
+  .us-regular-sups {
+    --untitledsans-regular-sups: '____';
+    font-variant-position: super;
+  }
+}
+
+.us-regular-tnum {
+  --untitledsans-regular-tnum: 'tnum' on;
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  .us-regular-tnum {
+    --untitledsans-regular-tnum: '____';
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.us-regular-zero {
+  --untitledsans-regular-zero: 'zero' on;
+}
+
+@supports (font-variant-numeric: slashed-zero) {
+  .us-regular-zero {
+    --untitledsans-regular-zero: '____';
+    font-variant-numeric: slashed-zero;
+  }
+}
+
+.us-regular-cpsp {
+  --untitledsans-regular-cpsp: 'cpsp' on;
+}
+
+/* Apply current state of all custom properties
+   whenever a class is being applied */
+.us-regular-case,
+.us-regular-dnom,
+.us-regular-frac,
+.us-regular-numr,
+.us-regular-ordn,
+.us-regular-sinf,
+.us-regular-sups,
+.us-regular-tnum,
+.us-regular-zero,
+.us-regular-cpsp {
+  font-feature-settings: var(--untitledsans-regular-case), var(--untitledsans-regular-dnom),
+    var(--untitledsans-regular-frac), var(--untitledsans-regular-numr), var(--untitledsans-regular-ordn),
+    var(--untitledsans-regular-sinf), var(--untitledsans-regular-sups), var(--untitledsans-regular-tnum),
+    var(--untitledsans-regular-zero), var(--untitledsans-regular-cpsp);
+}

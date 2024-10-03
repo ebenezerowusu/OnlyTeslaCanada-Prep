@@ -1,0 +1,14 @@
+<div
+  [ngClass]="[
+    'vueGridRow',
+    rowHorizontalSpace || '',
+  ]"
+  [ngStyle]="{
+    'align-items': alignItems,
+    'justify-content': justifyContent,
+    'text-align': rowTextAlign,
+    'flex-wrap': flexWrap
+  }"
+>
+  <ng-content></ng-content>
+</div>

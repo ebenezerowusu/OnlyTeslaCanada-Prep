@@ -1,5 +1,33 @@
   <app-header></app-header>
-  <div class="content-wrap">
-      <router-outlet></router-outlet>
-  </div>
-  <app-footer></app-footer>
+
+    <!-- <app-footer></app-footer> -->
+    <div style="width: 200px; height: 400px;">
+      <app-button
+        [disabled]="false"
+        [loading]="false"
+        [elementType]="'button'"
+        [ghost]="false"
+        [color]="'primary'"
+        [block]="false"
+        (click)="handleButtonClick()"
+      >
+        Click Me
+      </app-button>
+    </div>
+
+  <app-loader
+  [color]="'red'"
+  [size]="'lg'"
+></app-loader>
+
+<app-loader
+  [color]="'red'"
+  [size]="'sm'"
+></app-loader>
+
+<app-loader color="red" size="md"></app-loader>
+<button>Test Button</button>
+
+<div class="w-[500px] border">
+  <app-search-vue-v></app-search-vue-v>
+</div>

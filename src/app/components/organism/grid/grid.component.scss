@@ -1,0 +1,59 @@
+// vue-grid.component.scss
+@import 'design-system';
+
+.vueGrid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  @include mediaMin(tabletPortrait) {
+    max-width: $screen-tablet-portrait;
+  }
+
+  @include mediaMin(tabletLandscape) {
+    max-width: $screen-tablet-landscape;
+  }
+
+  @include mediaMin(smallDesktop) {
+    max-width: $screen-small-desktop;
+  }
+
+  @include mediaMin(largeDesktop) {
+    max-width: $screen-large-desktop;
+  }
+
+  &.hsm {
+    padding-left: $gutter-sm;
+    padding-right: $gutter-sm;
+  }
+
+  &.hmd {
+    padding-left: $gutter-md;
+    padding-right: $gutter-md;
+  }
+
+  &.hlg {
+    padding-left: $gutter-lg;
+    padding-right: $gutter-lg;
+  }
+
+  &.vsm {
+    padding-bottom: $gutter-sm;
+  }
+
+  &.vmd {
+    padding-bottom: $gutter-md;
+  }
+
+  &.vlg {
+    padding-bottom: $gutter-lg;
+  }
+
+  &.fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

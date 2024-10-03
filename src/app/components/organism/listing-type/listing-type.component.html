@@ -1,0 +1,11 @@
+<div
+  class="listing-type__label"
+  [ngClass]="{
+    'listing-type__label--for-sale': type === 'For Sale',
+    'listing-type__label--lease-takeover': type === 'Lease Takeover',
+    'listing-type__label--pending-sale': type === 'Pending Sale',
+    'listing-type__label--concise': concise
+  }"
+>
+  {{ type }}
+</div>

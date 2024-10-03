@@ -1,0 +1,27 @@
+<div [ngClass]="[
+    'vueSelect',
+    inlinePlaceholder ? 'hasPlaceholder' : '',
+    multiSelect ? 'multiSelect' : '',
+    disabled ? 'disabled' : '',
+    !isValid([]) ? 'error' : ''
+  ]">
+  <label [attr.for]="id">{{ label }}<sup *ngIf="required">*</sup></label>
+  <span class="inline-placeholder" *ngIf="inlinePlaceholder">{{ inlinePlaceholder }}</span>
+  <select
+    [attr.id]="id"
+    [attr.title]="label"
+    [attr.multiple]="multiSelect ? true : null"
+    [attr.required]="required ? true : null"
+    [attr.disabled]="disabled ? true : null"
+    (change)="onInput($event)"
+    [(ngModel)]="currentValueAsArray"
+    class="select-input"
+  >
+    <option *ngFor="let option of items" [value]="option.value" [selected]="isSelected(option)">
+      {{ option.label }}
+    </option>
+  </select>
+  <span *ngIf="!isValid([])">
+    <fa-icon [icon]="['far', 'exclamation-triangle']"></fa-icon> {{ messageOrError([]) }}
+  </span>
+</div>

@@ -1,0 +1,39 @@
+@import 'design-system';
+
+.listing-type__label {
+  display: inline-block;
+  color: #fff;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  background-color: palette-color('grey');
+  padding: 2px 1rem 1px;
+  font-size: 8px;
+
+  @include mediaMin(tabletLandscape) {
+    font-size: 11px;
+  }
+
+  &--for-sale {
+    background-color: palette-color('red');
+  }
+
+  &--lease-takeover {
+    background-color: palette-color('orange');
+  }
+
+  &--pending-sale {
+    background-color: palette-color('yellow');
+    color: palette-color('black');
+  }
+
+  &--test,
+  &--missing-images,
+  &--pending-approval {
+    background-color: palette-color('black');
+    color: palette-color('white');
+  }
+}
+
+.listing-type__label.listing-type__label--concise {
+  font-size: 8px;
+}

@@ -1,0 +1,76 @@
+<ng-container [ngSwitch]="elementType">
+
+  <button
+    *ngSwitchCase="'button'"
+    #buttonRef
+    [disabled]="isDisabled"
+    [ngClass]="[
+      'button',
+      color,
+      isDisabled ? 'disabled' : '',
+      ghost ? 'ghost' : '',
+      block ? 'block' : ''
+    ]"
+    [style.width]="actualWidth"
+    [attr.tabindex]="isDisabled ? -1 : 0"
+    [attr.aria-hidden]="isDisabled"
+    (click)="onClick($event)"
+  >
+    <ng-container *ngIf="!loading; else loader">
+      Hello
+    </ng-container>
+    <ng-template #loader>
+      <app-loader class="loader"></app-loader>
+    </ng-template>
+  </button>
+
+
+  <a
+    *ngSwitchCase="'routerLink'"
+    #buttonRef
+    [routerLink]="href"
+    [ngClass]="[
+      'button',
+      color,
+      isDisabled ? 'disabled' : '',
+      ghost ? 'ghost' : '',
+      block ? 'block' : ''
+    ]"
+    [style.width]="actualWidth"
+    [attr.tabindex]="isDisabled ? -1 : 0"
+    [attr.aria-hidden]="isDisabled"
+    (click)="onClick($event)"
+  >
+    <ng-container *ngIf="!loading; else loader">
+      <ng-content></ng-content>
+    </ng-container>
+    <ng-template #loader>
+      <app-loader class="loader"></app-loader>
+    </ng-template>
+  </a>
+
+
+  <a
+    *ngSwitchCase="'a'"
+    #buttonRef
+    [href]="href"
+    [ngClass]="[
+      'button',
+      color,
+      isDisabled ? 'disabled' : '',
+      ghost ? 'ghost' : '',
+      block ? 'block' : ''
+    ]"
+    [style.width]="actualWidth"
+    [attr.tabindex]="isDisabled ? -1 : 0"
+    [attr.aria-hidden]="isDisabled"
+    (click)="onClick($event)"
+  >
+    <ng-container *ngIf="!loading; else loader">
+      <ng-content></ng-content>
+    </ng-container>
+    <ng-template #loader>
+      <app-loader class="loader"></app-loader>
+    </ng-template>
+  </a>
+</ng-container>

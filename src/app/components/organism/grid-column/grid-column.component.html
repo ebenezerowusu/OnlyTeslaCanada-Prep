@@ -1,0 +1,12 @@
+<!-- grid-column.component.html -->
+<div
+[ngClass]="[
+'vueGridColumn',
+columnVerticalSpace ? 'v' + columnVerticalSpace : '',
+columnHorizontalSpace ? 'h' + columnHorizontalSpace : ''
+]"
+  [ngStyle]="styles"
+  [attr.data-width]="width"
+>
+  <ng-content></ng-content>
+</div>

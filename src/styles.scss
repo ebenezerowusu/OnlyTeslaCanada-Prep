@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './assets/designSystem/themes/light.scss';
+@import './assets/designSystem/themes/dark.scss';
+
 @font-face {
     font-family: "Untitled_Sans";
     src: url('/assets/fonts/UntitledSansRegular.woff2') format('woff2'),
@@ -10,7 +13,7 @@
     font-weight: 400;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "Untitled_Sans";
     src: url('/assets/fonts/UntitledSansBold.woff2') format('woff2'),
@@ -18,7 +21,7 @@
     font-weight: 700;
     font-style: bold;
   }
-  
+
   @font-face {
     font-family: "Untitled_Sans";
     src: url('/assets/fonts/UntitledSansMedium.woff2') format('woff2'),
@@ -26,7 +29,7 @@
     font-weight: 500;
     font-style: medium;
   }
-  
+
   * {
     font-family: "Untitled_Sans", Helvetica, sans-serif;
   }

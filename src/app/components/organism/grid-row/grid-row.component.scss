@@ -1,0 +1,17 @@
+@import 'design-system';
+
+.vueGridRow {
+  display: flex;
+
+  &.sm {
+    margin-left: -$gutter-sm;
+  }
+
+  &.md {
+    margin-left: -$gutter-md;
+  }
+
+  &.lg {
+    margin-left: -$gutter-lg;
+  }
+}
