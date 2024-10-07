@@ -29,8 +29,14 @@
   html {
     font-size: 62.5%;
   }
-  body{
+  
+  body {
+    font-family: Untitled Sans, Helvetica, sans-serif;
     font-size: 1.6em;
+    font-weight: 200;
+    letter-spacing: normal;
+    line-height: 2.2rem;
+    font-display: swap
   }
   
   * {
