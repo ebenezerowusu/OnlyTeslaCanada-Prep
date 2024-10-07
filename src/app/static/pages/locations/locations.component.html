@@ -1,0 +1,23 @@
+<section class="bg-black py-2">
+    <div class="container mx-auto px-4">
+        <h1 class="text-white text-3xl font-semibold leading-tight tracking-tighter">Locations</h1>
+    </div>
+</section>
+
+<section class="flex justify- container mx-auto px-4 py-2 xl:space-x-5">
+    <div class="w-full lg:w-[50%]">
+        <h1 class="text- text-3xl font-semibold leading-tight tracking-tighter">Used Tesla For Sale In:</h1>
+        <ul *ngFor="let location of locations" class="list-disc list-black ">
+            <li><a [href]="location.url" class="text-[#3186d0] underline !decoration-[#3186d0]">{{location.name}}</a></li>
+          
+        </ul>
+    </div>
+    <div class="w-full lg:w-[50%]">
+        <h1 class="text- text-3xl font-semibold leading-tight tracking-tighter">Used Tesla For Sale In:</h1>
+        <ul *ngFor="let location of locations" class="list-disc list-black ">
+            <li><a [href]="location.url" class="text-[#3186d0] underline !decoration-[#3186d0]">{{location.name}}</a></li>
+          
+        </ul>
+    </div>
+   
+</section>
