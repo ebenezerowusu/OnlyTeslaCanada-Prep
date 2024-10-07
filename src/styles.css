@@ -26,6 +26,12 @@
     font-weight: 500;
     font-style: medium;
   }
+  html {
+    font-size: 62.5%;
+  }
+  body{
+    font-size: 1.6em;
+  }
   
   * {
     font-family: "Untitled_Sans", Helvetica, sans-serif;
