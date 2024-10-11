@@ -1,23 +1,37 @@
-<section class="bg-black py-2">
-    <div class="container mx-auto px-4">
-        <h1 class="text-white text-3xl font-semibold leading-tight tracking-tighter">Locations</h1>
+<main class="bg-[#e1e5e8]">
+  <section
+    class="container mx-auto flex flex-col space-y-16 lg:space-y-0 px-4 py-[20px] md:py-[40px] sm:px-[8rem] lg:flex-row xl:space-x-5"
+  >
+    <div class="w-full space-y-3 lg:w-[50%]">
+      <h1 class="text-[26px] font-semibold leading-tight tracking-tighter">
+        Used Tesla For Sale In:
+      </h1>
+      <ul class="ml-[1.6rem] list-disc space-y-1">
+        <li *ngFor="let location of locations" class="text-[!18px]">
+          <a
+            [href]="location.url"
+            class="text-14 text-[#3186d0] underline !decoration-[#3186d0] lg:text-[18px]"
+            >{{ location.name }}</a
+          >
+        </li>
+      </ul>
     </div>
-</section>
-
-<section class="flex justify- container mx-auto px-4 py-2 xl:space-x-5">
-    <div class="w-full lg:w-[50%]">
-        <h1 class="text- text-3xl font-semibold leading-tight tracking-tighter">Used Tesla For Sale In:</h1>
-        <ul *ngFor="let location of locations" class="list-disc list-black ">
-            <li><a [href]="location.url" class="text-[#3186d0] underline !decoration-[#3186d0]">{{location.name}}</a></li>
-          
-        </ul>
+    <div class="w-full space-y-1 lg:w-[50%]">
+      <h1 class="text-[26px] font-semibold leading-tight tracking-tighter">
+        Used Tesla For Sale In:
+      </h1>
+      <ul
+        *ngFor="let location of locations"
+        class="relative ml-[1.5rem] list-disc"
+      >
+        <li>
+          <a
+            [href]="location.url"
+            class="text-14 text-[#3186d0] underline !decoration-[#3186d0] lg:text-[18px]"
+            >{{ location.name }}</a
+          >
+        </li>
+      </ul>
     </div>
-    <div class="w-full lg:w-[50%]">
-        <h1 class="text- text-3xl font-semibold leading-tight tracking-tighter">Used Tesla For Sale In:</h1>
-        <ul *ngFor="let location of locations" class="list-disc list-black ">
-            <li><a [href]="location.url" class="text-[#3186d0] underline !decoration-[#3186d0]">{{location.name}}</a></li>
-          
-        </ul>
-    </div>
-   
-</section>
+  </section>
+</main>

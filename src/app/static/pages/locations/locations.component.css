@@ -1,0 +1,111 @@
+.vueGridRow_17Az {
+    display: flex
+}
+
+.vueGridRow_17Az.sm_2XxR {
+    margin-left: -.8rem
+}
+
+.vueGridRow_17Az.md_3grx {
+    margin-left: -1.6rem
+}
+
+.vueGridRow_17Az.lg_mExv {
+    margin-left: -3.2rem
+}
+
+.vueGridColumn_2t9e {
+    padding: 0;
+    flex-basis: var(--phone)
+}
+
+@media (min-width: 768px) {
+    .vueGridColumn_2t9e {
+        flex-basis: var(--tablet-portrait)
+    }
+}
+
+@media (min-width: 1024px) {
+    .vueGridColumn_2t9e {
+        flex-basis: var(--tablet-landscape)
+    }
+}
+
+@media (min-width: 1280px) {
+    .vueGridColumn_2t9e {
+        flex-basis: var(--small-desktop)
+    }
+}
+
+@media (min-width: 1440px) {
+    .vueGridColumn_2t9e {
+        flex-basis: var(--large-desktop)
+    }
+}
+
+.vueGridColumn_2t9e.hsm_310o {
+    padding-left: .8rem
+}
+
+.vueGridColumn_2t9e.hmd_j38p {
+    padding-left: 1.6rem
+}
+
+.vueGridColumn_2t9e.hlg_3GAy {
+    padding-left: 3.2rem
+}
+
+.vueGridColumn_2t9e.vsm_2Iy- {
+    padding-top: .8rem
+}
+
+.vueGridColumn_2t9e.vmd_35Q2 {
+    padding-top: 1.6rem
+}
+
+.vueGridColumn_2t9e.vlg_30hc {
+    padding-top: 3.2rem
+}
+
+.page__header[data-v-1d36c4b3] {
+    background-color: #000;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative
+}
+
+@media (min-width: 1280px) {
+    .page__header[data-v-1d36c4b3] {
+        padding-top: 40px;
+        padding-bottom: 40px
+    }
+}
+
+@media (min-width: 1440px) {
+    .page__header-grid[data-v-1d36c4b3] {
+        padding-left: 8rem;
+        padding-right: 8rem
+    }
+}
+
+.page__title[data-v-1d36c4b3] {
+    position: relative;
+    margin: 10px 0 0;
+    line-height: 1.1;
+    color: #fff;
+    letter-spacing: -.2px;
+    font-size: 22px
+}
+
+@media screen and (min-width: 320px) {
+    .page__title[data-v-1d36c4b3] {
+        font-size: calc(22px + (1400vw - 4480px)/1360)
+    }
+}
+
+@media screen and (min-width: 1680px) {
+    .page__title[data-v-1d36c4b3] {
+        font-size: 36px
+    }
+}

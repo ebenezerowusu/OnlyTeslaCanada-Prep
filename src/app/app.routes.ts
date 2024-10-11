@@ -5,10 +5,10 @@ import { UsedTeslaForSaleComponent } from './features/listings/pages/used-tesla-
 import { LocationsComponent } from './static/pages/locations/locations.component';
 
 export const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
-  {path:'used-tesla-for-sale', component:UsedTeslaForSaleComponent},
-  {path:'dashboard', component:DashbaordComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'used-tesla-for-sale', component: UsedTeslaForSaleComponent },
+  { path: 'dashboard', component: DashbaordComponent },
   { path: 'home', component: HomeComponent },
-  {path:'location', component:LocationsComponent},
-  {path:'**', redirectTo:'home', pathMatch:'full'},
+  { path: 'location', component: LocationsComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
